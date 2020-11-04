@@ -1,0 +1,115 @@
+        * {
+            margin: 0%;
+            padding: 0%;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background-color: rgb(211, 211, 211);
+            margin: 10px;
+            padding: 5px auto;
+        }
+        
+        section {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 90%;
+            text-align: justify;
+            background-color: rgba(250, 245, 245, 0.589);
+        }
+        
+        ol,
+        ul {
+            font-weight: bold;
+            padding: 5px 10px;
+            margin: 0%;
+            font-size: 85%;
+            list-style: none;
+        }
+        
+        li {
+            margin: 0px;
+            font-weight: normal;
+        }
+        
+        section code {
+            text-align: left;
+        }
+        
+        code {
+            border: 1px solid black;
+            padding: 3px 6px;
+            margin: 5px;
+            background-color: rgb(211, 211, 211);
+            display: block;
+        }
+        
+        #navbar {
+            height: 100%;
+            width: 250px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            overflow-x: hidden;
+            font-weight: bold;
+            color: #000;
+            background-color: rgb(211, 211, 211);
+        }
+        
+        header h1 {
+            border-bottom: double;
+        }
+        
+        h1 {
+            text-align: center;
+            margin: 0 auto;
+            padding: 13px;
+        }
+        
+        #navbar a {
+            padding: 10px 8px 10px 20px;
+            text-decoration: none;
+            font-size: 20px;
+            display: block;
+            color: #000;
+        }
+        
+        #navbar a:hover {
+            border: black 1px solid;
+        }
+        
+        #main-doc {
+            margin-left: 250px;
+            padding: 0px 10px;
+        }
+        
+        h2 {
+            text-align: center;
+            margin: 5px;
+            padding: 5px;
+        }
+        
+        .main-section {
+            margin: 5px 0px;
+            padding: 10px 10px
+        }
+        
+        p {
+            margin: 10px;
+        }
+        
+        @media screen and (max-width:750px) {
+            #navbar {
+                width: 100%;
+                height: 150px;
+                font-weight: normal;
+                border-bottom: 2px black double;
+            }
+            #navbar a {
+                padding: 5px 4px 5px 10px;
+            }
+            #main-doc {
+                margin-left: 0px;
+                margin-top: 150px;
+                padding: 10px 0px;
+            }
+        }

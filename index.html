@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Tecnical Documentation</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+
+
+</head>
+
+<body>
+    <header>
+        <nav id="navbar">
+            <header>
+                <h1>Responsive Web Design</h1>
+            </header>
+            <a href="#introduction" class="nav-link">Introduction</a>
+            <a href="#viewport" class="nav-link">Viewport</a>
+            <a href="#grid_view" class="nav-link">Grid View</a>
+            <a href="#media_queries" class="nav-link">Media Queries</a>
+            <a href="#images" class="nav-link">Images</a>
+            <a href="#videos" class="nav-link">Videos</a>
+            <a href="#frameworks" class="nav-link">Frameworks</a>
+
+        </nav>
+    </header>
+    <main id="main-doc">
+        <section class="main-section" id="introduction">
+            <header>
+                <h2>Introduction</h2>
+            </header>
+            <p>
+                Responsive web design uses only HTML and CSS to resize, hide, shrink, enlarge, or move the content to make your web page look good on all sizes of screen devices:desktops, tablets, and phones.
+            </p>
+        </section>
+
+        <section class="main-section" id="viewport">
+            <header>
+                <h2> Viewport </h2>
+            </header>
+            <p>The viewport is the user's visible area of a web page it varies with the device,and will be smaller on a mobile phone than on a computer screen. To help all the content to fit equally on any device screen HTML5 introduced a method to let web
+                designers take control over the viewport.</p>
+
+            <code>
+                &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+            </code>
+
+            <p>This gives the browser instructions on how to control the page's dimensions and scaling. The <i>width=device-width</i> part sets the width of the page to follow the screen-width of the device. The <i>initial-scale=1.0</i> part sets the initial
+                zoom level when the page is first loaded by the browser.</p>
+            <p> Users are suppose to scroll websites vertically on any device but not horizontally, if the user is forced to scroll horizontally, or zoom out, to see the whole web page it results in a poor user experience.</p>
+            <ol>
+                <p>Some additional rules to follow:</p>
+                <ul>Do NOT use large fixed width elements -</ul>
+                <li>adjust the content to fit within the width of the viewport.</li>
+                <ul>Do NOT let the content rely on a particular viewport width to render well -</ul>
+                <li>content should not rely on a particular viewport width to render well.</li>
+                <ul>Use CSS media queries to apply different styling for small and large screens -</ul>
+                <li>consider using relative width values, such as width: 100%. Be careful of using large absolute positioning values. It may cause the element to fall outside the viewport on small devices.</li>
+            </ol>
+        </section>
+
+        <section class="main-section" id="grid_view">
+            <header>
+                <h2>Grid View</h2>
+            </header>
+            <p>
+                Many web pages are based on a grid -view,which means that page is divided into columns. Using a grid-view makes it easier to place elementes on the page.
+            </p>
+            <p>
+                A responsive grid-view often has 12 columns, and has a total width of 100%, and will shrink and expand as you resize the browser window.
+            </p>
+            <h3>
+                Buildind a Responsive Grid-View
+            </h3>
+            <p>All the HTML elements have to have the <i>box-sizing</i> property set ti <i>border-box</i>; to makes sure that the padding and border are included in the total width and height of the elements. </p>
+            <code>* {
+                box-sizing:border-box;
+            }
+        </code>
+            <p>
+                To use a responsive grid-view with 12 columns, first we must calculate the percentage for one column:<i> 100% / 12 columns = 8.33%</i>. Then we make one class for each of the 12 columns, class="col-" and a number defining how many columns
+                the section should span. All the columns should be floating to the left, and have a padding of 15px. Each row should be wrapped in a &lt;div&gt;. The number of columns inside a row should always add up to 12.
+            </p>
+
+        </section>
+
+        <section class="main-section" id="media_queries">
+            <header>
+                <h2>Media Queries </h2>
+            </header>
+            <p>The <i>@media</i> rule to include a block of CSS properties only if a certain condition is true.</p>
+            <code><pre>
+             <i>@media only screen and (max-width:600px)</i>{
+             body{ 
+             background-color:lightblue;
+                } 
+             }
+</pre>
+                </code>
+            <h3> Add a Breakpoint</h3>
+            <p>
+                You can set certain parts of the design to behave differently on each side of the breakpoint.
+            </p>
+            <p>Design for mobile before designing for desktop or any other device will make the page display faster on smaller devices. Instead of changing styles when the width gets smaller than 768px, change it when the width gets larger than 768px.
+
+            </p>
+            <p>You can use the breakpoint to change the layout of your website but also you can change font styles and sizes, hide elements, change color and add different styles.</p>
+
+
+        </section>
+
+        <section class="main-section" id="images">
+            <header>
+                <h2>Images</h2>
+            </header>
+            <p>If the width property is set to a percentage and the height is set to "auto", the image will be responsive and scale up and down:
+            </p>
+            <code><pre>
+            img{
+                width:100%;
+                height:auto;
+                }
+            </pre></code>
+
+            <p>
+                In the example above, the image can be scaled up to be larger than its original size. A better solution, in many cases, will be to use the max-width property instead.
+            </p>
+            <h3>Background Images</h3>
+            <ul>
+                <p>Background Images can also respond to resizing an scaling, here are some methods:</p>
+                <li>
+                    If the <i>background-size</i> property is set to "contain", the background image will scale, and try to fit the content area. However, the image will keep its aspect ratio
+                </li>
+                <li>
+                    If the <i>background-size</i> property is set to "100% 100%", the background image will stretch to cover the entire content area:
+                </li>
+                <li>
+                    If the <i>background-size</i> property is set to "cover", the background image will scale to cover the entire content area.(some part of the background image may be clipped)
+                </li>
+            </ul>
+
+        </section>
+        <section class="main-section" id="videos">
+            <header>
+                <h2>Videos</h2>
+            </header>
+            <p>If the width property is set to 100%, the video player will be responsive and scale up and down:
+            </p> <code><pre>
+                video {
+                    width: 100%;
+                    height:auto;
+                    }
+            </pre></code>
+            <p>
+                If the max-width property is set to 100%, the video player will scale down if it has to, but never scale up to be larger than its original size.
+            </p>
+            <p>If you want to add a video in your web page that will be resized to always take up all the available space:</p>
+            <code><pre>
+    video {
+        width: 100%;
+        height: auto;
+      }
+</pre></code>
+        </section>
+
+        <section class="main-section" id="frameworks">
+            <header>
+                <h2>Frameworks </h2>
+            </header>
+            <p> There are many existing CSS Frameworks that offer Responsive Design that are free, and easy to use. </p>
+            <p>
+                A great way to create a responsive design, is to use a responsive style sheet, like W3.CSS W3.CSS makes it easy to develop sites that look nice at any size; desktop, laptop, tablet, or phone. To learn more about W3.CSS, read their tutorial on
+                <a href="https://www.w3schools.com/w3css/default.asp">W3.css</a>.
+            </p>
+            <p>
+                Another popular framework is Bootstrap, it uses HTML, CSS and jQuery to make responsive web pages. To learn more about Bootstrap, read a tutorial on
+                <a href=https://www.w3schools.com/bootstrap/bootstrap_ver.asp>Bootstrap Tutorial.</a>
+            </p>
+        </section>
+
+    </main>
+
+
+</body>
+<script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+
+</html>
